@@ -13,9 +13,6 @@ https://nodejs.org/en/download/
 Python 2: 
 https://www.python.org/download/releases/2.0/#download
 
-Visual Studio 2019 versão 16 for C++ Development: 
-https://visualstudio.microsoft.com/pt-br/vs/features/cplusplus/
-
 Git version 2: 
 https://git-scm.com/downloads
 
