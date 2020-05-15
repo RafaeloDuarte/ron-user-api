@@ -11,7 +11,7 @@
     "dev": "NODE_ENV=developement nodemon server.js",
     "build": "NODE_ENV=production pm2 start server.js --name=\"ron-api\""
   },
-  "author": "RafaelOD",
+  "author": "Rafaelo",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.19.0",
