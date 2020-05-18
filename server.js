@@ -60,3 +60,6 @@ app.listen(PORT, (err) => {
     if(err) throw err;
     console.log(`Rodando na //localhost:${PORT}`);
 });
+
+require('./adminbro')
+////////
