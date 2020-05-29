@@ -21,20 +21,25 @@ app.use("/public/images", express.static(__dirname + "/public/images"));
 // SETUP MONGODB
 const dbs = require("./config/database");
 const dbURI = isProduction ? dbs.dbProd : dbs.dbTest;
-mongoose.connect(dbURI, { useNewUrlParser: true });
+mongoose.connect(dbURI,
+    {
+        useUnifiedTopology: true,
+        useCreateIndex: true,
+        useNewUrlParser: true
+    });
 
 // SETUP EJS
 app.set("view engine", "ejs");
 
 // CONFIGURACOES
-if(!isProduction) app.use(morgan("dev"));
+if (!isProduction) app.use(morgan("dev"));
 app.use(cors());
 app.disable('x-powered-by');
 app.use(compression());
 
 // SETUP BODY PARSER
-app.use(bodyParser.urlencoded({ extended: false, limit: 1.5*1024*1024 }));
-app.use(bodyParser.json({ limit: 1.5*1024*1024 }));
+app.use(bodyParser.urlencoded({ extended: false, limit: 1.5 * 1024 * 1024 }));
+app.use(bodyParser.json({ limit: 1.5 * 1024 * 1024 }));
 
 // MODELS
 require("./model");
@@ -51,14 +56,14 @@ app.use((req, res, next) => {
 // ROTA - 422, 500, 401
 app.use((err, req, res, next) => {
     res.status(err.status || 500);
-    if(err.status !== 404) console.warn("Error: ", err.message, new Date());
+    if (err.status !== 404) console.warn("Error: ", err.message, new Date());
     res.json(err);
 });
 
 // ESCUTAR
 app.listen(PORT, (err) => {
-    if(err) throw err;
+    if (err) throw err;
     console.log(`Rodando na //localhost:${PORT}`);
 });
 
-require('./adminbro')
+//require('./adminbro')
