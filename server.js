@@ -29,7 +29,7 @@ mongoose.connect(dbURI,
     });
 
 // SETUP EJS
-app.set("view engine", "ejs");
+app.set("view engine", ejs);
 
 // CONFIGURACOES
 if (!isProduction) app.use(morgan("dev"));
