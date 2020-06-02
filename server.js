@@ -66,4 +66,4 @@ app.listen(PORT, (err) => {
     console.log(`Rodando na //localhost:${PORT}`);
 });
 
-//require('./adminbro')
+require('./adminbro')
