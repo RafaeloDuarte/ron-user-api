@@ -14,9 +14,6 @@ appAdmin.use(formidableMiddleware());
 // Resources definitions
 const Usuario = mongoose.model('Usuario')
 
-// Routes definitions
-appAdmin.get('/', (req, res) => res.send('Hello World!'))
-
 // Route which returns last 100 users from the database
 appAdmin.get('/users', async (req, res) => {
     const usuarios = await Usuario.find({}).limit(10)
@@ -32,7 +29,7 @@ appAdmin.post('/users', async (req, res) => {
 // Pass all configuration settings to AdminBro
 const adminBro = new AdminBro({
     resources: [Usuario],
-    rootPath: '/admin',
+    rootPath: '/',
 })
 
 // Build and use a router which will handle all AdminBro routes
