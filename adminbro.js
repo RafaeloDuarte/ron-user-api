@@ -43,7 +43,7 @@ appAdmin.use(adminBro.options.rootPath, router)
 const run = async () => {
     await mongoose.connect('mongodb+srv://rafael:NIYdvtMJDCLR24Su@thunder-pk9ny.mongodb.net/patrol?retryWrites=true&w=majority&ssl=true',
         { useNewUrlParser: true })
-    await appAdmin.listen(8080, () => console.log(`Example appAdmin listening on port 8080!`))
+    await appAdmin.listen(8001, () => console.log(`Example appAdmin listening on port 8001!`))
 }
 
 run()
