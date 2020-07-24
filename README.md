@@ -50,7 +50,8 @@ Deve ter as chaves e valores nessa formação:
     password: senha
 }
 
-A resposta da requisição será os dados cadastrados e o token de autenticação para que o usuário já esteja logado e possa usufruir dos serviços:
+A resposta da requisição será preenchida com os dados cadastrados e o token de autenticação.
+O navegador deve armazenar o token(seja por localstorage ou cookies) e todas vezes que for necessário transitar entre as rotas do client(entre as telas) esse token deve ser enviado na header da requisição para a rota GET host/v1/api/usuarios/ com a chave 'Authorization' preenchida no seguinte esquema: 'Ecomercy ${token}'. A resposta será a mesma do login e o client deverá confrontar o token armazenado com o token respondido pelo GET se ambos forem iguais a confirmação foi positiva e isso datá permissão para que a página requerida seja executada com o usuário logado.
 
 * ### Update
 
